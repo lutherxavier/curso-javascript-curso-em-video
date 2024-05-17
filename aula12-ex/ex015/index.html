@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <section>
+
+        <div>
+            <form action="cadastro.php" method="post">
+                <div>
+                    <label for="anoNasc">Ano de nascimento:</label>
+                    <input type="number" name="anoNasc" id="anoNasc" required>
+                </div>
+                <div>
+                    <span>Sexo:<span>
+                    <input type="radio" name="sexo" id="sexom" required> <label for="sexom">Masculino</label>
+                    <input type="radio" name="sexo" id="sexof"> <label for="sexof">Feminino</label>
+                </div>
+                <div>
+                    <input type="button" value="Enviar" onclick="verificar()">
+                    <input type="reset" value="Limpar">
+                </div>
+            </form>
+        </div>
+
+        <div id="resultado">
+            <p>Preencha os dados acima para ver o resutado!</p>
+            
+        </div>
+
+    </section>
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+    <script src="codigo.js"></script>
+</body>
+</html>

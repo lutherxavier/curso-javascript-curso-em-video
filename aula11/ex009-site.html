@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfândega</title>
+    <style>
+        body {
+            background-color: rgb(0, 128, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de nacionalidade</h1>
+    <p>Informe sua nacionalidade: 
+        <input type="text" name="nac" id="nac">
+    </p>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    
+    <script>
+        function verificar() {
+            
+            var txtnac = window.document.querySelector("input#nac")
+            var res = window.document.querySelector("div#res")
+            var nac = txtnac.value
+
+            res.innerHTML = `<p>Você é do ${nac}!</p>`
+
+            if (nac == "Brasil"){
+                res.innerHTML += "<p>Você é <strong>brasileiro</strong>.</p>"
+            } else {
+                res.innerHTML += "<p>Você <strong>não</strong> é brasileiro.</p>" 
+            }
+
+        }
+    </script>
+</body>
+</html>
