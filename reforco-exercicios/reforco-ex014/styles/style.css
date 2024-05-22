@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #468EEC;
+}
+
+body h1 {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 3em;
+    color: white;
+}
+
+main {
+    width: 40vw;
+    margin: auto;
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.411);
+    background-color: white;
+}
+
+p#msg {
+    text-align: center;
+    margin-top: 10px;
+}
+
+img#foto {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    padding-top: 25px;
+}
