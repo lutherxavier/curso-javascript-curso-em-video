@@ -3,37 +3,40 @@ function carregar() {
     var anoAtual = dataAtual.getFullYear()
     var anoNasc = document.querySelector("input#nasc")
     var res = document.getElementById("res")
-    var idade = anoAtual - Number(anoNasc.value)
-    
-    
+
     if (anoNasc.value == 0 || anoNasc.value > anoAtual) {
         window.alert("É necessário preencher os dados corretamente!")
-    } else if (sexo = masc) {
-        var img = document.querySelector("img#foto")
-        var masc = document.querySelector("input#masc")
-        var fem = document.querySelector("input#fem")
-        var sexo
-        //  ERRO NO INPUT RADIO, NÃO ESTÁ PEGANDO OS DADOS, PRECISO ARRUMAR 
-        if (idade > 0 && idade <= 10) {
-            res.innerHTML = "<p>Você é um bebê!</p>"
-        } else if (idade < 21) {
-            res.innerHTML = "<p>Você é um jovem!</p>"
-        } else if (idade < 60) {
-            res.innerHTML = "<p>Você é um adulto!</p>"
-        } else {
-            res.innerHTML = "<p>Você é um idoso!</p>"
-        }
-    } else if (sexo = fem) {
-        if (idade > 0 && idade <= 10) {
-            res.innerHTML = "<p>Você é uma bebê!</p>"
-        } else if (idade < 21) {
-            res.innerHTML = "<p>Você é uma jovem!</p>"
-        } else if (idade < 60) {
-            res.innerHTML = "<p>Você é uma adulta!</p>"
-        } else {
-            res.innerHTML = "<p>Você é uma idosa!</p>"
-        }  
-
-    }
-
+    } else {
+        var sexo = document.getElementsByName("sexo")
+        var idade = anoAtual - Number(anoNasc.value)
+        var genero = ""
+        var img = document.createElement("img")
+        img.setAttribute("id", "foto")
+        
+        if (sexo[0].checked) {
+            genero = "Homem"
+            if (idade >= 0 && idade <= 10) {
+                img.setAttribute("src", "imagens/bebe-m.jpg")
+            } else if (idade < 21) {
+                img.setAttribute("src", "imagens/jovem-m.jpg")
+            } else if (idade < 60) {
+                img.setAttribute("src", "imagens/adulto-m.jpg")
+            } else {
+                img.setAttribute("src", "imagens/idoso-m.jpg")
+            }
+        } else if (sexo[1].checked) {
+            genero = "Mulher"
+            if (idade >= 0 && idade <= 10) {
+                img.setAttribute("src", "imagens/bebe-f.jpg")
+            } else if (idade < 21) {
+                img.setAttribute("src", "imagens/jovem-f.jpg")
+            } else if (idade < 60) {
+                img.setAttribute("src", "imagens/adulto-f.jpg")
+            } else {
+                img.setAttribute("src", "imagens/idoso-f.jpg")
+            }   
+        }      
+    } 
+    res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
+    res.appendChild(img) 
 }
