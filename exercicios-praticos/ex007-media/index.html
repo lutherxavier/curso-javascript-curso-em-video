@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 007</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média do aluno v1.0</h1>
+    <button type="button" id="btn">Calcular média</button>
+    <div id="res">
+        
+    </div>
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let res = document.querySelector("#res");
+
+        btn.addEventListener("click", function() {
+            let aluno = prompt("Qual é o nome do aluno?");
+            let n1 = Number(prompt(`Qual foi a primeira nota de ${aluno}?`));
+            let n2 = Number(prompt(`Além de ${n1}, qual foi a outra nota de ${aluno}?`));
+            let media = (n1 + n2) / 2;
+
+            res.innerHTML = `<p>Calculando a média final de <mark>${aluno}</mark>.</p>`;
+            res.innerHTML += `<p>As notas obtidas foram <mark>${n1} e ${n2}</mark>.</p>`;
+            res.innerHTML += `<p>A média final será <mark>${media}</mark>.</p>`;
+        });
+    </script>
+</body>
+</html>
